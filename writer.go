@@ -3,6 +3,8 @@ package file
 import (
 	"os"
 	"path"
+	"strings"
+	"fmt"
 )
 
 func WriteBytes(filePath string, b []byte) (int, error) {
