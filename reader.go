@@ -8,6 +8,8 @@ import (
 	"strings"
 	"os"
 	"bytes"
+	"testing/iotest"
+	
 )
 
 func ToBytes(filePath string) ([]byte, error) {
