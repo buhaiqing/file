@@ -221,3 +221,7 @@ func MustOpenLogFile(fp string) *os.File {
 
 	return f
 }
+
+func IsWindows() bool {
+	return os.PathSeparator == '\\' && os.PathListSeparator == ';'
+}
