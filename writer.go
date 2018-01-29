@@ -20,16 +20,16 @@ func WriteString(filePath string, s string) (int, error) {
 }
 
 func WriteLines(lines [] string,path string)(err error){
-	var file *os.File
+	var _file *os.File
 
-	if file,err = os.Create(path); err != nil{
+	if _file,err = os.Create(path); err != nil{
 		return
 	}
 
-	defer file.Close()
+	defer _file.Close()
 
 	for _,elem := range lines {
-		_,err := file.WriteString(strings.TrimSpace(elem)+"\n")
+		_,err := _file.WriteString(strings.TrimSpace(elem)+"\n")
 		if err != nil {
 			fmt.Println(err)
 			break
