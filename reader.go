@@ -65,7 +65,7 @@ func ReadLine(r *bufio.Reader) ([]byte, error) {
 	return line, err
 }
 
-func readLines(path string) (lines [] string, err error) {
+func ReadLines(path string) (lines [] string, err error) {
 	var (
 		file   *os.File
 		part   [] byte
