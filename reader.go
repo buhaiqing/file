@@ -70,16 +70,16 @@ func ReadLine(r *bufio.Reader) ([]byte, error) {
 
 func ReadLines(path string) (lines [] string, err error) {
 	var (
-		file   *os.File
+		_file   *os.File
 		part   [] byte
 		prefix bool
 	)
 
-	if file, err = os.Open(path); err != nil {
+	if _file, err = os.Open(path); err != nil {
 		return
 	}
 
-	reader := bufio.NewReader(file)
+	reader := bufio.NewReader(_file)
 	buffer := bytes.NewBuffer(make([]byte, 1024))
 
 	for {
