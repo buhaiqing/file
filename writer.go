@@ -19,7 +19,7 @@ func WriteString(filePath string, s string) (int, error) {
 	return WriteBytes(filePath, []byte(s))
 }
 
-func writeLines(lines [] string,path string)(err error){
+func WriteLines(lines [] string,path string)(err error){
 	var file *os.File
 
 	if file,err = os.Create(path); err != nil{
