@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"strconv"
 	"strings"
+	"os"
 )
 
 func ToBytes(filePath string) ([]byte, error) {
