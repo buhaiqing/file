@@ -31,11 +31,11 @@ func WriteLines(lines [] string,path string)(err error){
 	defer _file.Close()
 	is_wins :=IsWindows()
 	for _,elem := range lines {
+		var sep string
 		if is_wins{
-			sep := "\r\n"
-		}
-		else{
-			sep :="\n"
+			sep = "\r\n"
+		}else{
+			sep ="\n"
 		}
 			
 		_,err := _file.WriteString(strings.TrimSpace(elem)+sep)
