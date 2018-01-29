@@ -6,6 +6,7 @@ import (
 	"strconv"
 	"strings"
 	"os"
+	"bytes"
 )
 
 func ToBytes(filePath string) ([]byte, error) {
