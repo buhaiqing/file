@@ -2,6 +2,7 @@ package file
 
 import (
 	"bufio"
+	"io"
 	"io/ioutil"
 	"strconv"
 	"strings"
