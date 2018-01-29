@@ -68,3 +68,23 @@ func ReadLine(r *bufio.Reader) ([]byte, error) {
 	return line, err
 }
 
+func ReadLines(path string)(lines [] string){
+	var (
+		file *os.File
+	)
+	file, _ = os.Open(path)
+
+	reader := bufio.NewReader(file)
+	//buffer := bytes.NewBuffer(make([]byte,1024))
+	for {
+		s1, err := reader.ReadString('\n')
+		if err == io.EOF {
+			break
+		}
+		if err != nil && err != iotest.ErrTimeout {
+			panic("GetLines: " + err.Error())
+		}
+		lines = append(lines,s1)
+	}
+	return
+}
