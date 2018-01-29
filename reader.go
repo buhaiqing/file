@@ -77,9 +77,15 @@ func ReadLines(path string)(lines [] string){
 
 	reader := bufio.NewReader(file)
 	//buffer := bytes.NewBuffer(make([]byte,1024))
-	
+	var sep string
+	is_wins :=IsWindows()
+	if is_wins{
+		sep = "\r\n"
+	}else{
+		sep ="\n"
+	}
 	for {
-		s1, err := reader.ReadString('\n')
+		s1, err := reader.ReadString(sep)
 		if err == io.EOF {
 			break
 		}
